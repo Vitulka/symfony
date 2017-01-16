@@ -158,7 +158,7 @@ class TodoController extends Controller
     }
 
     /**
-     * @Route("/todo/delete/{id}", name="todo_details")
+     * @Route("/todo/delete/{id}", name="todo_delete")
      */
     public function deleteAction($id) {
         $em = $this->getDoctrine()->getManager();
@@ -168,7 +168,7 @@ class TodoController extends Controller
         $em->flush();
 
         $this->addFlash(
-            'notice',
+            'error',
             'Todo Removed'
         );
 
